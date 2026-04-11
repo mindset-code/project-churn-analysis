@@ -1,31 +1,56 @@
+"""
+Synthetic Churn Dataset Generator — improved correlations & realism.
+Run: python generate_data.py
+Output: churn_data.csv
+"""
+
 import pandas as pd
 import numpy as np
 
-# Set seed for reproducibility
 np.random.seed(42)
+N = 2000  # 2x more customers
 
-# Number of customers
-n_customers = 1000
+age                  = np.random.randint(22, 68, N)
+subscription         = np.random.choice(['Basic', 'Standard', 'Premium'], N, p=[0.40, 0.35, 0.25])
+monthly_charges      = np.where(
+    subscription == 'Basic',    np.random.uniform(20,  60,  N),
+    np.where(subscription == 'Standard', np.random.uniform(55, 100, N),
+                                          np.random.uniform(95, 150, N))
+).round(2)
+total_usage          = np.random.uniform(30, 600, N).round(1)
+support_tickets      = np.random.poisson(2.2, N).clip(0, 12)
+contract_months      = np.random.choice([1, 12, 24], N, p=[0.45, 0.32, 0.23])
+tenure_months        = np.random.randint(1, 60, N)
+num_products         = np.random.choice([1, 2, 3, 4], N, p=[0.40, 0.30, 0.20, 0.10])
 
-# Generate synthetic data
-data = {
-    'CustomerID': range(1, n_customers + 1),
-    'Age': np.random.randint(25, 65, n_customers),
-    'SubscriptionType': np.random.choice(['Basic', 'Standard', 'Premium'], n_customers, p=[0.4, 0.35, 0.25]),
-    'MonthlyCharges': np.random.uniform(20, 150, n_customers).round(2),
-    'TotalUsageHours': np.random.uniform(50, 500, n_customers).round(2),
-    'SupportTickets': np.random.randint(0, 10, n_customers),
-    'ContractDuration_Months': np.random.choice([1, 12, 24], n_customers, p=[0.5, 0.3, 0.2]),
-    'Churn': np.random.choice([0, 1], n_customers, p=[0.8, 0.2]) # 80% No Churn, 20% Churn
-}
+# Base churn probability driven by multiple factors
+churn_prob = (
+    0.10
+    + 0.22 * (support_tickets >= 5).astype(float)
+    + 0.18 * (monthly_charges > 100).astype(float)
+    + 0.15 * (contract_months == 1).astype(float)
+    - 0.12 * (subscription == 'Premium').astype(float)
+    - 0.10 * (tenure_months > 24).astype(float)
+    - 0.08 * (num_products >= 3).astype(float)
+    + 0.10 * (total_usage < 80).astype(float)
+    - 0.06 * (contract_months == 24).astype(float)
+).clip(0.02, 0.92)
 
-df = pd.DataFrame(data)
+churn = (np.random.uniform(0, 1, N) < churn_prob).astype(int)
 
-# Introduce correlation: Higher charges, lower contract duration, and more tickets lead to higher churn
-df.loc[(df['MonthlyCharges'] > 100) & (df['ContractDuration_Months'] == 1), 'Churn'] = np.random.choice([0, 1], len(df[(df['MonthlyCharges'] > 100) & (df['ContractDuration_Months'] == 1)]), p=[0.3, 0.7])
-df.loc[df['SupportTickets'] > 7, 'Churn'] = np.random.choice([0, 1], len(df[df['SupportTickets'] > 7]), p=[0.2, 0.8])
+df = pd.DataFrame({
+    'CustomerID':           range(1, N + 1),
+    'Age':                  age,
+    'SubscriptionType':     subscription,
+    'MonthlyCharges':       monthly_charges,
+    'TotalUsageHours':      total_usage,
+    'SupportTickets':       support_tickets,
+    'ContractDuration_Months': contract_months,
+    'TenureMonths':         tenure_months,
+    'NumProducts':          num_products,
+    'Churn':                churn,
+})
 
-# Save the dataset
-df.to_csv('/home/ubuntu/project1_churn/churn_data.csv', index=False)
-
-print("Synthetic Churn Data generated successfully.")
+df.to_csv('churn_data.csv', index=False)
+print(f"Dataset generated: {N} customers, {churn.mean():.1%} churn rate")
+print(df['Churn'].value_counts().to_string())
