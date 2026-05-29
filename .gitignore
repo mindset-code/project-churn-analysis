@@ -49,3 +49,6 @@ CLAUDE.local.md
 
 # Outputs subagentes
 .claude/progress/
+
+# Engram local memory
+.engram/
