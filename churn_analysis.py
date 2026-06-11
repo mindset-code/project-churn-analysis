@@ -5,14 +5,13 @@ Requires: pandas, numpy, scikit-learn, matplotlib, seaborn
 """
 
 import pandas as pd
-import numpy as np
 import json
 import os
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import (
-    classification_report, confusion_matrix, roc_auc_score, roc_curve
+    classification_report, confusion_matrix, roc_auc_score
 )
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -68,7 +67,8 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
             xticklabels=['No Churn', 'Churn'],
             yticklabels=['No Churn', 'Churn'])
 plt.title('Confusion Matrix — Churn Prediction')
-plt.ylabel('Actual'); plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.xlabel('Predicted')
 plt.tight_layout()
 plt.savefig('confusion_matrix.png', dpi=150)
 plt.close()
