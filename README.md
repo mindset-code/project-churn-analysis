@@ -6,8 +6,8 @@
 
 > 🇬🇧 **English version first.** · 🇪🇸 **La versión en español está más abajo** → [ir a Español](#-español).
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-%E2%86%92%20Open%20Dashboard-a78bfa?style=for-the-badge&logo=firebase&logoColor=white)](https://proyectos-personales.web.app/churn)
-[![Portfolio](https://img.shields.io/badge/Portfolio-proyectos--personales.web.app-60a5fa?style=for-the-badge&logo=firebase&logoColor=white)](https://proyectos-personales.web.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-%E2%86%92%20Open%20Dashboard-a78bfa?style=for-the-badge&logo=firebase&logoColor=white)](https://proyectos-mindset-code.web.app/churn)
+[![Ficha del proyecto](https://img.shields.io/badge/Ficha%20del%20proyecto-mindset--code.com-2c4a6e?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://mindset-code.com/es/codigo)
 [![Stack](https://img.shields.io/badge/Stack-Python%20%C2%B7%20scikit--learn-3776AB?style=for-the-badge&logo=scikitlearn&logoColor=white)](.)
 [![Domain](https://img.shields.io/badge/Domain-Data%20Science%20%C2%B7%20Retention-16a34a?style=for-the-badge)](.)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
@@ -20,7 +20,7 @@ Acquiring a customer costs far more than keeping one — so the most valuable qu
 
 It demonstrates the full data-science workflow — data generation, preprocessing, handling class imbalance, model training, rigorous evaluation, and communicating results — connecting Data Science directly to Revenue Operations.
 
-**▶ Live dashboard: [proyectos-personales.web.app/churn](https://proyectos-personales.web.app/churn)**
+**▶ Live dashboard: [proyectos-mindset-code.web.app/churn](https://proyectos-mindset-code.web.app/churn)**
 
 ---
 
@@ -100,8 +100,8 @@ project-churn-analysis/
 
 Released under the **[MIT License](LICENSE)**.
 
-- **Portfolio:** [proyectos-personales.web.app](https://proyectos-personales.web.app)
-- **LinkedIn:** [Mindset & Code](https://www.linkedin.com/company/mindset-code)
+- **Portfolio:** [proyectos-mindset-code.web.app](https://proyectos-mindset-code.web.app)
+- **Web:** [mindset-code.com](https://mindset-code.com/es)
 - **Email:** contacto@mindset-code.com
 
 ---
@@ -124,7 +124,7 @@ Captar un cliente cuesta mucho más que retenerlo — así que la pregunta más 
 
 Demuestra el flujo completo de data science —generación de datos, preprocesamiento, manejo de clases desbalanceadas, entrenamiento, evaluación rigurosa y comunicación de resultados— conectando Data Science directamente con Revenue Operations.
 
-**▶ Dashboard en vivo: [proyectos-personales.web.app/churn](https://proyectos-personales.web.app/churn)**
+**▶ Dashboard en vivo: [proyectos-mindset-code.web.app/churn](https://proyectos-mindset-code.web.app/churn)**
 
 ---
 
@@ -204,10 +204,10 @@ project-churn-analysis/
 
 Publicado bajo la **[Licencia MIT](LICENSE)**.
 
-- **Portafolio:** [proyectos-personales.web.app](https://proyectos-personales.web.app)
-- **LinkedIn:** [Mindset & Code](https://www.linkedin.com/company/mindset-code)
+- **Portafolio:** [proyectos-mindset-code.web.app](https://proyectos-mindset-code.web.app)
+- **Web:** [mindset-code.com](https://mindset-code.com/es)
 - **Email:** contacto@mindset-code.com
 
 ---
 
-*Built by [Mindset & Code](https://github.com/mindset-code) · Data & BI Analyst · MBA · ISC2 CC*
+*Mindset & Code · asesoría fiscal y tecnológica · [mindset-code.com](https://mindset-code.com/es)*
