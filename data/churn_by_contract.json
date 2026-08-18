@@ -1,0 +1,20 @@
+[
+  {
+    "segment": "Monthly",
+    "total": 921,
+    "churned": 192,
+    "churn_rate": 0.2085
+  },
+  {
+    "segment": "Annual",
+    "total": 637,
+    "churned": 48,
+    "churn_rate": 0.0754
+  },
+  {
+    "segment": "2-Year",
+    "total": 442,
+    "churned": 21,
+    "churn_rate": 0.0475
+  }
+]

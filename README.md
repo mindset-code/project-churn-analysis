@@ -28,12 +28,19 @@ It demonstrates the full data-science workflow — data generation, preprocessin
 
 | Metric | Value |
 |--------|-------|
-| **Accuracy** | 81.4% |
-| **AUC-ROC** | 0.881 |
-| **Precision (churn)** | ~0.78 |
-| **Recall (churn)** | ~0.76 |
+| **AUC-ROC** | 0.703 |
+| **Accuracy** | 64.0% |
+| **Recall (churn)** | 0.615 |
+| **Precision (churn)** | 0.205 |
 
-The model correctly flags more than 3 of every 4 at-risk customers — enough lead time to act before they cancel. AUC-ROC (0.881) is the headline metric because the classes are imbalanced.
+Every figure here comes out of `python churn_analysis.py` on the committed dataset, and the script writes them into `analysis_results.md` and `data/*.json` so they cannot drift from the code.
+
+**AUC-ROC is the headline** because the classes are imbalanced: 13.1% of customers churn, so a model that predicted "nobody leaves" would score 86.9% accuracy while being useless. Read the two class metrics together:
+
+- **Recall 0.615** — it catches 3 of every 5 customers who do leave.
+- **Precision 0.205** — but 4 of every 5 it flags were not going to leave.
+
+That trade is deliberate: `class_weight='balanced'` moves the threshold towards catching leavers, because a retention call to someone who was staying costs far less than losing a customer nobody called. Whether it is the *right* trade depends on what that call costs, and this repository does not model that.
 
 ---
 
@@ -132,12 +139,19 @@ Demuestra el flujo completo de data science —generación de datos, preprocesam
 
 | Métrica | Valor |
 |---------|-------|
-| **Accuracy** | 81,4% |
-| **AUC-ROC** | 0,881 |
-| **Precisión (churn)** | ~0,78 |
-| **Recall (churn)** | ~0,76 |
+| **AUC-ROC** | 0,703 |
+| **Accuracy** | 64,0 % |
+| **Recall (churn)** | 0,615 |
+| **Precisión (churn)** | 0,205 |
 
-El modelo detecta más de 3 de cada 4 clientes en riesgo — margen suficiente para actuar antes de la cancelación. El AUC-ROC (0,881) es la métrica principal porque las clases están desbalanceadas.
+Todas estas cifras salen de ejecutar `python churn_analysis.py` sobre el dataset commiteado, y el script las escribe en `analysis_results.md` y en `data/*.json` para que no puedan separarse del código.
+
+**El AUC-ROC es la métrica principal** porque las clases están desbalanceadas: se va el 13,1 % de los clientes, así que un modelo que predijera «no se va nadie» sacaría un 86,9 % de accuracy siendo inútil. Las dos métricas de clase se leen juntas:
+
+- **Recall 0,615** — caza a 3 de cada 5 clientes que efectivamente se van.
+- **Precisión 0,205** — pero 4 de cada 5 a los que señala no se iban a ir.
+
+Ese intercambio es deliberado: `class_weight='balanced'` mueve el umbral hacia cazar a los que se van, porque una llamada de retención a alguien que se quedaba cuesta mucho menos que perder a un cliente al que nadie llamó. Si es el intercambio *correcto* depende de lo que cueste esa llamada, y este repositorio no modela eso.
 
 ---
 

@@ -1,0 +1,20 @@
+[
+  {
+    "segment": "Basic",
+    "total": 770,
+    "churned": 93,
+    "churn_rate": 0.1208
+  },
+  {
+    "segment": "Standard",
+    "total": 722,
+    "churned": 85,
+    "churn_rate": 0.1177
+  },
+  {
+    "segment": "Premium",
+    "total": 508,
+    "churned": 83,
+    "churn_rate": 0.1634
+  }
+]

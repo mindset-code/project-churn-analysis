@@ -1,0 +1,38 @@
+[
+  {
+    "feature": "ContractDuration_Months",
+    "coefficient": -0.7835
+  },
+  {
+    "feature": "TenureMonths",
+    "coefficient": -0.3917
+  },
+  {
+    "feature": "SubscriptionType_Standard",
+    "coefficient": -0.3103
+  },
+  {
+    "feature": "SubscriptionType_Premium",
+    "coefficient": -0.2732
+  },
+  {
+    "feature": "NumProducts",
+    "coefficient": -0.1228
+  },
+  {
+    "feature": "Age",
+    "coefficient": -0.1152
+  },
+  {
+    "feature": "TotalUsageHours",
+    "coefficient": -0.1029
+  },
+  {
+    "feature": "MonthlyCharges",
+    "coefficient": 0.3806
+  },
+  {
+    "feature": "SupportTickets",
+    "coefficient": 0.4391
+  }
+]
