@@ -12,6 +12,10 @@
 [![Domain](https://img.shields.io/badge/Domain-Data%20Science%20%C2%B7%20Retention-16a34a?style=for-the-badge)](.)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
 
+[![Churn model running: feature importance and the confusion matrix on the test set](docs/captura.jpg)](https://proyectos-mindset-code.web.app/churn)
+
+*[Open the live demo](https://proyectos-mindset-code.web.app/churn)*
+
 ---
 
 ## The problem this solves
